@@ -100,7 +100,7 @@ impl Analyzer {
     where
         F: FnMut(&LogicalPlan, &dyn AnalyzerRule),
     {
-        let start_time = Instant::now();
+        //let start_time = Instant::now();
         let mut new_plan = plan.clone();
 
         // TODO add common rule executor for Analyzer and Optimizer
@@ -116,7 +116,9 @@ impl Analyzer {
             DataFusionError::Context("check_analyzed_plan".to_string(), Box::new(e))
         })?;
         log_plan("Final analyzed plan", &new_plan);
-        debug!("Analyzer took {} ms", start_time.elapsed().as_millis());
+
+        //debug!("Analyzer took {} ms", start_time.elapsed().as_millis());
+
         Ok(new_plan)
     }
 }

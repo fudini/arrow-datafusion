@@ -302,7 +302,7 @@ fn stats_projection(
 impl ProjectionStream {
     fn batch_project(&self, batch: &RecordBatch) -> Result<RecordBatch> {
         // records time on drop
-        let _timer = self.baseline_metrics.elapsed_compute().timer();
+        //let _timer = self.baseline_metrics.elapsed_compute().timer();
         let arrays = self
             .expr
             .iter()

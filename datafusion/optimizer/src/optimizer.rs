@@ -280,7 +280,7 @@ impl Optimizer {
         let options = config.options();
         let mut new_plan = plan.clone();
 
-        let start_time = Instant::now();
+        //let start_time = Instant::now();
 
         let mut previous_plans = HashSet::with_capacity(16);
         previous_plans.insert(LogicalPlanSignature::new(&new_plan));
@@ -344,7 +344,7 @@ impl Optimizer {
             i += 1;
         }
         log_plan("Final optimized plan", &new_plan);
-        debug!("Optimizer took {} ms", start_time.elapsed().as_millis());
+        //debug!("Optimizer took {} ms", start_time.elapsed().as_millis());
         Ok(new_plan)
     }
 
